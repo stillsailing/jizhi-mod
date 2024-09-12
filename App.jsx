@@ -5,6 +5,7 @@ import { getRandomPoem } from "./components/Poem";
 import { useEffect, useState, useRef } from "react";
 import { IoMoonOutline as MoonIcon, IoSunnyOutline as SunIcon } from "react-icons/io5";
 import { BiFontFamily as FontIcon } from "react-icons/bi";
+import { IoVolumeHighOutline as VolumeOnIcon, IoVolumeMuteOutline as VolumeOffIcon } from "react-icons/io5";
 
 import { driver } from "driver.js";
 import "driver.js/dist/driver.css";
@@ -162,7 +163,7 @@ export default function App() {
 
   const [voiceData, setVoiceData] = useState(null);
   const audioRef = useRef(new Audio());
-  
+
   const playVoice = async () => {
     if (!voiceData) {
       try {
@@ -179,6 +180,14 @@ export default function App() {
       }
     } else {
       audioRef.current.play();
+    }
+  };
+
+  const toggleMute = () => {
+    if (audioRef.current.muted) {
+      audioRef.current.muted = false;
+    } else {
+      audioRef.current.muted = true;
     }
   };
 
@@ -254,6 +263,17 @@ export default function App() {
               />
               <FontIcon className="swap-on fill-current w-8 h-8" />
               <FontIcon className="swap-off fill-current w-8 h-8" />
+            </label>
+          </div>
+        </div>
+        <div className="ml-4"></div>
+        {/* 静音按钮 */}
+        <div className="tooltip" data-tip="静音">
+          <div id="font-toggle" className="custom-settings-button-style">
+            <label id="theme-toggle" className="swap">
+              <input type="checkbox" onClick={toggleMute} />
+              <VolumeOffIcon className="swap-on fill-current w-8 h-8" />
+              <VolumeOnIcon className="swap-off fill-current w-8 h-8" />
             </label>
           </div>
         </div>
