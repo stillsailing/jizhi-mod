@@ -2,7 +2,7 @@ import { DARK_THEME, FONTNAME_LIST, LIGHT_THEME, POEM_MAXLINELENGTH } from "./co
 import { getRandomPoem } from "./components/Poem";
 // import type { Poem } from "./components/Poem";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { IoMoonOutline as MoonIcon, IoSunnyOutline as SunIcon } from "react-icons/io5";
 import { BiFontFamily as FontIcon } from "react-icons/bi";
 
@@ -161,6 +161,26 @@ export default function App() {
   }, []);
 
   const [voiceData, setVoiceData] = useState(null);
+  const audioRef = useRef(new Audio());
+  
+  const playVoice = async () => {
+    if (!voiceData) {
+      try {
+        const response = await browser.runtime.sendMessage({ action: "getVoice", text: poem.title });
+        if (response.url) {
+          setVoiceData(response.url);
+          audioRef.current.src = response.url;
+          await audioRef.current.play();
+        } else {
+          console.error("错误:", response.error);
+        }
+      } catch (error) {
+        console.error("播放音频时出错:", error);
+      }
+    } else {
+      audioRef.current.play();
+    }
+  };
 
   return (
     <div
@@ -176,23 +196,7 @@ export default function App() {
             <p
               id="poem-title-container"
               className="text-5xl mb-10 whitespace-pre-wrap cursor-pointer"
-              onClick={() => {
-                if (!voiceData || voiceData === "") {
-                  browser.runtime.sendMessage({ action: "getVoice", text: poem.title }).then((response) => {
-                    if (response.url) {
-                      // console.log("Audio URL:", response.url);
-                      setVoiceData(response.url);
-                      const audio = new Audio(response.url);
-                      audio.play();
-                    } else {
-                      console.error("Error:", response.error);
-                    }
-                  });
-                } else {
-                  const audio = new Audio(voiceData);
-                  audio.play();
-                }
-              }}
+              onClick={playVoice}
             >
               {poem.title}
             </p>
@@ -204,9 +208,9 @@ export default function App() {
               </a>
             </p>
             {poem.who && (
-              <p className="flex align-items-center justify-center text-center text-2xl rounded-md pr-1 mr-1 custom-author-style">
+              <p className="flex align-items-center justify-center text-center text-2xl rounded-md px-2 py-0 custom-author-style">
                 <a
-                  className="pl-0.5 pr-1"
+                  className="leading-normal"
                   href={`https://www.baidu.com/s?wd=${poem.who ? poem.who : ""}`}
                   target="_blank"
                 >
