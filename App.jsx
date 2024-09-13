@@ -26,30 +26,27 @@ export default function App() {
 
   const [isDarkMode, setIsDarkMode] = useState(false);
 
+  const setTheme = (isDark) => {
+    document.documentElement.setAttribute("data-theme", isDark ? DARK_THEME : LIGHT_THEME);
+    setIsDarkMode(isDark);
+    localStorage.setItem("isDarkMode", JSON.stringify(isDark));
+  };
+
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
     const storedDarkMode = localStorage.getItem("isDarkMode");
-    if (storedDarkMode) {
-      setIsDarkMode(JSON.parse(storedDarkMode));
+    if (storedDarkMode !== null) {
+      setTheme(JSON.parse(storedDarkMode));
     } else {
-      setIsDarkMode(mediaQuery.matches);
+      setTheme(mediaQuery.matches);
     }
 
-    // const handleChange = (event: MediaQueryListEvent) => {
-    const handleChange = (event) => {
-      setIsDarkMode(event.matches);
-    };
-
+    const handleChange = (event) => setTheme(event.matches);
     mediaQuery.addEventListener("change", handleChange);
 
-    return () => {
-      mediaQuery.removeEventListener("change", handleChange);
-    };
+    return () => mediaQuery.removeEventListener("change", handleChange);
   }, []);
-
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", isDarkMode ? DARK_THEME : LIGHT_THEME);
-  }, [isDarkMode]);
 
   const [poem, setPoem] = useState(getRandomPoem());
 
@@ -253,8 +250,7 @@ export default function App() {
                 className="theme-controller"
                 checked={isDarkMode}
                 onChange={() => {
-                  setIsDarkMode(!isDarkMode);
-                  localStorage.setItem("isDarkMode", !isDarkMode);
+                  setTheme(!isDarkMode);
                 }}
               />
               <SunIcon className="swap-on fill-current w-7 h-7" />
