@@ -68,6 +68,8 @@
 
 - [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/jizhi-mod/)（Firefox、Waterfox 等使用）
 
+> 插件曾用名：几枝夏，现已更名为 “浮生梦”
+
 > 注：若无法访问 Chrome Web Store
 >
 > 可在国内 Chrome Web Store 克隆站下载安装：
