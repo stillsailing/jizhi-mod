@@ -166,6 +166,10 @@ export default function App() {
   const audioRef = useRef(new Audio());
 
   const playVoice = async () => {
+    // 如果静音，则不播放
+    if (isMuted) {
+      return;
+    }
     if (!voiceData) {
       try {
         const response = await browser.runtime.sendMessage({ action: "getVoice", text: poem.title });
@@ -180,16 +184,23 @@ export default function App() {
         console.error("播放音频时出错:", error);
       }
     } else {
+      // 停止播放然后重新播放
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
       audioRef.current.play();
     }
   };
 
+  const storedMuted = localStorage.getItem("isMuted");
+  const [isMuted, setIsMuted] = useState(storedMuted ? JSON.parse(storedMuted) : false);
+
+  useEffect(() => {
+    audioRef.current.muted = isMuted;
+    localStorage.setItem("isMuted", JSON.stringify(isMuted));
+  }, [isMuted]);
+
   const toggleMute = () => {
-    if (audioRef.current.muted) {
-      audioRef.current.muted = false;
-    } else {
-      audioRef.current.muted = true;
-    }
+    setIsMuted((prevMuted) => !prevMuted);
   };
 
   return (
@@ -272,7 +283,7 @@ export default function App() {
         <div className="tooltip" data-tip="静音">
           <div id="font-toggle" className="custom-settings-button-style">
             <label id="theme-toggle" className="swap">
-              <input type="checkbox" onClick={toggleMute} />
+              <input type="checkbox" checked={isMuted} onChange={toggleMute} />
               <VolumeOffIcon className="swap-on fill-current w-8 h-8" />
               <VolumeOnIcon className="swap-off fill-current w-8 h-8" />
             </label>
