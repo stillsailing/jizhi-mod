@@ -66,7 +66,7 @@
 
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/aihpjpjndpdkbmdjghjglbmippnjlkcp)（Chrome、Edge、Opera、Brave、360、Safari 等使用）
 
-- [Firefox Addons](https://addons.mozilla.org/zh-CN/firefox/addon/%E5%87%A0%E6%9E%9D%E5%A4%8F/)（Firefox、Waterfox 等使用）
+- [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/jizhi-mod/)（Firefox、Waterfox 等使用）
 
 > 注：若无法访问 Chrome Web Store
 >
