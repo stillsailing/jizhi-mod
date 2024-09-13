@@ -3,6 +3,8 @@ import { getRandomPoem } from "./components/Poem";
 // import type { Poem } from "./components/Poem";
 
 import { useEffect, useState, useRef } from "react";
+import { browser } from "wxt/browser";
+
 import { IoMoonOutline as MoonIcon, IoSunnyOutline as SunIcon } from "react-icons/io5";
 import { BiFontFamily as FontIcon } from "react-icons/bi";
 import { IoVolumeHighOutline as VolumeOnIcon, IoVolumeMuteOutline as VolumeOffIcon } from "react-icons/io5";
@@ -12,7 +14,6 @@ import "driver.js/dist/driver.css";
 
 import "animate.css";
 import "./style.css";
-import { browser } from "wxt/browser";
 
 export default function App() {
   const storedFontIndex = localStorage.getItem("fontIndex");
