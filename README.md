@@ -15,28 +15,11 @@
       alt="Chrome Web Store"
       src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"
   /></a>
-  <a rel="noreferrer noopener" target="_blank" href="https://addons.mozilla.org/zh-CN/firefox/addon/%E5%87%A0%E6%9E%9D%E5%A4%8F/"
+  <a rel="noreferrer noopener" target="_blank" href="https://addons.mozilla.org/en-US/firefox/addon/jizhi-mod/"
     ><img
       alt="Firefox Add-ons"
       src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"
   /></a>
-  <!-- <a rel="noreferrer noopener" target="_blank" href=""
-    ><img
-      alt="Apple App Store"
-      src="https://img.shields.io/badge/Safari-141e24.svg?&style=for-the-badge&logo=safari&logoColor=white"
-  /></a>
-  <a
-    rel="noreferrer noopener" target="_blank"
-    href=""
-    ><img
-      alt="Edge Addons"
-      src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"
-  /></a>
-  <a el="noreferrer noopener" href=""
-    ><img
-      alt="Thunderbird"
-      src="https://img.shields.io/badge/Thunderbird-141e24.svg?&style=for-the-badge&logo=thunderbird&logoColor=white"
-  /></a> -->
 </p>
 
 ## 介绍
