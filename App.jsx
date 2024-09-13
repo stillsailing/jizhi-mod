@@ -6,6 +6,8 @@ import { useEffect, useState, useRef } from "react";
 import { browser } from "wxt/browser";
 
 import { IoMoonOutline as MoonIcon, IoSunnyOutline as SunIcon } from "react-icons/io5";
+import { MdTimelapse as SyncIcon } from "react-icons/md";
+
 import { BiFontFamily as FontIcon } from "react-icons/bi";
 import { IoVolumeHighOutline as VolumeOnIcon, IoVolumeMuteOutline as VolumeOffIcon } from "react-icons/io5";
 
@@ -253,8 +255,8 @@ export default function App() {
                   setTheme(!isDarkMode);
                 }}
               />
-              <SunIcon className="swap-on fill-current w-7 h-7" />
-              <MoonIcon className="swap-off fill-current w-7 h-7" />
+              <SyncIcon className="swap-on fill-current w-8 h-8" />
+              <MoonIcon className="swap-off fill-current w-8 h-8" />
             </label>
           </div>
         </div>
