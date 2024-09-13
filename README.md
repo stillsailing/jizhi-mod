@@ -1,4 +1,4 @@
-# 几枝·夏
+# 浮生梦
 
 <p align="center">
   <a
@@ -41,7 +41,7 @@
 
 ## 介绍
 
-支持自定义新标签页的跨浏览器扩展，几枝夏将在新标签页上展示中国经典诗词。
+支持自定义新标签页的跨浏览器扩展，浮生梦将在新标签页上展示中国经典诗词。
 
 ### 目前已完成的功能
 
@@ -52,14 +52,23 @@
 有空会持续更新新功能，目前只是基础 1.0 版本。
 
 ## 预览
+
 ![LightTheme](preview/light.png)
+
 <!-- https://i.imgur.com/qc5QtNM.png -->
+
 ![DarkTheme](preview/dark.png)
+
 <!-- https://i.imgur.com/Z8A47Rd.png -->
+
 ![FirefoxPreview](preview/Firefox.png)
+
 <!-- https://i.imgur.com/fQgS52Q.png -->
+
 ![SafariPreview](preview/Safari.png)
+
 <!-- https://i.imgur.com/ucGvozQ.png -->
+
 ## 特性
 
 - 使用完全离线的数据，无需联网
@@ -70,7 +79,7 @@
 
 #### 商店下载链接：
 
-> Chrome、Firefox、Edge 等浏览器商店点击下面链接或标题的图标下载，也可以直接在浏览器拓展商店搜索 “几枝夏” 安装。
+> Chrome、Firefox、Edge 等浏览器商店点击下面链接或标题的图标下载，也可以直接在浏览器拓展商店搜索 “浮生梦” 安装。
 
 - [Chrome Web Store](https://chrome.google.com/webstore/detail/aihpjpjndpdkbmdjghjglbmippnjlkcp)（Chrome、Edge、Opera、Brave、360、Safari 等使用）
 
@@ -79,7 +88,7 @@
 > 注：若无法访问 Chrome Web Store
 >
 > 可在国内 Chrome Web Store 克隆站下载安装：
-> [几枝夏 | Chrome扩展 - Crx搜搜](https://www.crxsoso.com/webstore/detail/aihpjpjndpdkbmdjghjglbmippnjlkcp)
+> [浮生梦 | Chrome扩展 - Crx搜搜](https://www.crxsoso.com/webstore/detail/aihpjpjndpdkbmdjghjglbmippnjlkcp)
 
 #### Releases 预构建下载：
 

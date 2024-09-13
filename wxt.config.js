@@ -8,8 +8,8 @@ export default defineConfig({
     // ],
   }),
   manifest: {
-    author: "unicar9,xxnuo",
-    name: "几枝夏",
-    description: "支持自定义新标签页的 Chrome 扩展，几枝夏将在新标签页上展示中国经典诗词。",
+    author: "xxnuo",
+    name: "浮生梦",
+    description: "支持自定义新标签页的 Chrome 扩展，在新标签页上展示中国经典诗词。",
   },
 });
